@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<h2>Contact Us</h2>
+<p>Fill out the form below to contact us:</p>
+
+<form action="/contact" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+{% if user_data %}
+  <hr>
+  <h3>Form Submitted:</h3>
+  <p><strong>Name:</strong> {{ user_data.name }}</p>
+  <p><strong>Email:</strong> {{ user_data.email }}</p>
+  <p><strong>Message:</strong> {{ user_data.message }}</p>
+{% endif %}
+{% endblock %}

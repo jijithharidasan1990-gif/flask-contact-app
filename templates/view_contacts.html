@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Contacts</title>
+</head>
+<body>
+    <h1>All Contacts</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th> <!-- Added message header -->
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.message }}</td> <!-- Display message -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
